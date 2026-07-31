@@ -1,34 +1,31 @@
 function [huffman_dict_disk_adapt,huffman_code_disk_adapt]=compressed_output(huffman_dict, huffman_code, huff_ipmatrix)
 % dir=input('enter the text file name existing in the directory: ')
 %---------------------huffman_code conversion to 8 bits-----------
-% col=size(huffman_code,2);
-% X=floor(col/8);
-% Y2=X*8;
-% dict_reshape=reshape(huffman_code(1:Y2), [X,8]);
-% testing=num2str(dict_reshape);
-% dec_output1=bin2dec(testing);
-% 
-% if col~=Y2
-%     temp_dict=huffman_code(Y2+1:col);
-%     testing2=num2str(temp_dict);
-%     dec_output2=bin2dec(testing2);
-%     %concatenate the output to dec_output1
-%     row_size=size(dec_output1,1);
-%     dec_output1(row_size+1,1)=dec_output2;
-%     huffman_code_disk_adapt=dec_output1;
-% else
-%     huffman_code_disk_adapt=dec_output1;
-% end
-huffman_code_disk_adapt = logical(huffman_code);
+col=size(huffman_code,2);
+X=floor(col/8);
+Y2=X*8;
+dict_reshape=reshape(huffman_code(1:Y2), [X,8]);
+testing=num2str(dict_reshape);
+dec_output1=bin2dec(testing);
+
+if col~=Y2
+    temp_dict=huffman_code(Y2+1:col);
+    testing2=num2str(temp_dict);
+    dec_output2=bin2dec(testing2);
+    %concatenate the output to dec_output1
+    row_size=size(dec_output1,1);
+    dec_output1(row_size+1,1)=dec_output2;
+    huffman_code_disk_adapt=dec_output1;
+else
+    huffman_code_disk_adapt=dec_output1;
+end
+
 %-----------huffman_dict------- conversion into eight bit symbol to integer
 
 dict_size=size(huffman_dict,1);
 for i=1:dict_size
-%     huffman_dict_temp=num2str(huffman_dict{i,2});
-%     huffman_dict{i,2}=bin2dec(huffman_dict_temp);
-      huffman_dict{i,2} = logical(huffman_dict{i,2});
-      huffman_dict{i,1} = logical(dec2bin(huffman_dict{i,1}) - '0'); 
-      %huffman_dict{i,1} = logical(huffman_dict{i,1});
+    huffman_dict_temp=num2str(huffman_dict{i,2});
+    huffman_dict{i,2}=bin2dec(huffman_dict_temp);
 end
 huffman_dict_disk_adapt=cell2mat(huffman_dict);
 
