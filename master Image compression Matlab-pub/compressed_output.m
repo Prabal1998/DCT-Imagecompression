@@ -27,7 +27,8 @@ for i=1:dict_size
 %     huffman_dict_temp=num2str(huffman_dict{i,2});
 %     huffman_dict{i,2}=bin2dec(huffman_dict_temp);
       huffman_dict{i,2} = logical(huffman_dict{i,2});
-      huffman_dict{i,1} = logical(huffman_dict{i,1});
+      huffman_dict{i,1} = logical(dec2bin(huffman_dict{i,1}) - '0'); 
+      %huffman_dict{i,1} = logical(huffman_dict{i,1});
 end
 huffman_dict_disk_adapt=cell2mat(huffman_dict);
 
