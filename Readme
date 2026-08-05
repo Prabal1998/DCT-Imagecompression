@@ -1,7 +1,19 @@
 # Imagcompmatlab is a preliminary draft that can be used to study image compression using the DCT transform. This script is designed for research purposes without considering computational overhead.
-
-The paper can be found here
+------------------------------------------------------------
+The paper can be found here (No longer maintained)
 Available: https://cipn.ku.edu.np/?page_id=372
+
+-------------------------------------------------------------
+
+Please find the paper here [link here] (https://doi.org/10.5281/zenodo.19981655)
+
+https://doi.org/10.5281/zenodo.19981655
+
+--------------------------------------------------------------
+
+I prefer reaching out through discussion [link discussion](https://github.com/Prabal1998/DCT-Imagecompression/discussions) forum over mail.
+
+
 
 Cite the code as:
 P. Devkota, “DCT-Image-compression.” Accessed: Jul. 01, 2023. [Online]. Available: https://github.com/Prabal1998/DCT-Image-compression
