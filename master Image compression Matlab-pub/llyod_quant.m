@@ -17,12 +17,14 @@ for k=1:lvl
      if k==size(d,2)
          [v1,v2]=find(mat2quant_scal_f>=d(k-1) & mat2quant_scal_f<d(k));
              for j=1:length(v1)
-                 quant_mat(v1(j),v2(j))=round(r(k));
+                 %quant_mat(v1(j),v2(j))=round(r(k));
+                 quant_mat(v1(j),v2(j))=r(k);
              end  
      elseif k==lvl
           [v1,v2]=find(mat2quant_scal_f>=d(k-1));
           for j=1:length(v1)
-                 quant_mat(v1(j),v2(j))=round(r(k));
+                 %quant_mat(v1(j),v2(j))=round(r(k));
+                 quant_mat(v1(j),v2(j))=r(k);
           end
      else
          [v1,v2]=find(mat2quant_scal_f>=d(k) & mat2quant_scal_f<d(k+1));
